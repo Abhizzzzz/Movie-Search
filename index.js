@@ -7,7 +7,7 @@ let getMovieDetails = () =>{
 	let title = $('#title').val();
 	let year = $('#year').val();
 	let id = $('#id').val();
-	if(title == " " ){
+	if(title == "" ){
 		alert("hi");
 	}
 	
