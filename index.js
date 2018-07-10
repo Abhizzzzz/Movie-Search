@@ -37,7 +37,7 @@ let checkValidation = () =>{
 		else{
 			//to add '+' in place of space
 			title = title.split(' ').join('+');
-			link = `http://www.omdbapi.com/?apikey=2ea2f91b&t=${title}`;
+			link = `https://www.omdbapi.com/?apikey=2ea2f91b&t=${title}`;
 			getMovieDetails();
 		}
 	}
@@ -59,7 +59,7 @@ let checkValidation = () =>{
 		else{
 			//to add '+' in place of space
 			title = title.split(' ').join('+');
-			link = `http://www.omdbapi.com/?apikey=2ea2f91b&t=${title}&y=${year}`;
+			link = `https://www.omdbapi.com/?apikey=2ea2f91b&t=${title}&y=${year}`;
 			getMovieDetails();
 		}
 	}
@@ -72,7 +72,7 @@ let checkValidation = () =>{
 		}
 		//assigning link and calling getMovieDetails()
 		else{
-			link = `http://www.omdbapi.com/?apikey=2ea2f91b&i=${id}`;
+			link = `https://www.omdbapi.com/?apikey=2ea2f91b&i=${id}`;
 			getMovieDetails();
 		}
 	}
