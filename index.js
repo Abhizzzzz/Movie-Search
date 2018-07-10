@@ -96,9 +96,11 @@ let getMovieDetails = () =>{
 				$("#container1").css("display","block");
 				$("#container2").css("display","block");
 				$(".icon-group").css("display","block");
+				$("hr").css("display","block");
 				//poster
 				if(response.Poster == "N/A"){
-					$("#poster").html(`<img src="posterSubstitute.jpg" style="margin-left: 2rem;margin-top: -4rem;height:50vh;border: 1px solid white;padding: 0.5rem; background-color: white;">`);
+					$("#poster").html(`<img src="posterSubstitute.jpg" style="margin-left: 2rem;margin-top: -4rem;height:50vh;width:18vw;border: 1px solid white;padding: 0.5rem; background-color: white;">`);
+					$("#pCon").html(`<img src="posterSubstitute.jpg" style="margin-left: 2rem;height:50vh;border: 1px solid white;padding: 0.5rem; background-color: white;">`);
 				}
 				else{
 					$("#poster").html(`<img src="${response.Poster}" style="margin-left: 2rem;margin-top: -4rem;height:50vh;width:18vw;border: 1px solid white;padding: 0.5rem; background-color: white;">`);
@@ -114,10 +116,14 @@ let getMovieDetails = () =>{
 				$(".line1").css("display","none");
 				$(".line2").css("display","none");
 				//ratings
+
 				if(response.Ratings.length == 1){
 					$("#rating1").html(`${response.Ratings[0].Value}`);
 					$("#source1").html(`${response.Ratings[0].Source}`);
 
+				}
+				else if(response.Ratings.length == 0){
+					$("hr").css("display","none");
 				}
 				else{
 					for(let i = 0;i<response.Ratings.length;i++){
