@@ -270,6 +270,7 @@ let getMovieDetails = () =>{
 		 	else{
 		 		$("#container1").css("display","none");
 		 		$("#container2").css("display","none");
+		 		$("#containerM").css("display","none");
 		 		$("#searchNotFound").css("display","block");
 		 	}	
 		 },
