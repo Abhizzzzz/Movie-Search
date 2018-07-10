@@ -92,11 +92,15 @@ let getMovieDetails = () =>{
 		success: (response) =>{
 			//only when response is true
 			if(response.Response == "True"){
-				$("#searchNotFound").css("display","none");
 				$("#container1").css("display","block");
 				$("#container2").css("display","block");
 				$(".icon-group").css("display","block");
 				$("hr").css("display","block");
+				if ($(window).width() <= 768) {
+					$("#containerM").show();
+					
+				}
+				// $("#searchNotFound").css("display","block");
 				//poster
 				if(response.Poster == "N/A"){
 					$("#poster").html(`<img src="posterSubstitute.jpg" style="margin-left: 2rem;margin-top: -4rem;height:50vh;width:18vw;border: 1px solid white;padding: 0.5rem; background-color: white;">`);
@@ -270,8 +274,18 @@ let getMovieDetails = () =>{
 		 	else{
 		 		$("#container1").css("display","none");
 		 		$("#container2").css("display","none");
-		 		$("#containerM").css("display","none");
+		 		if ($(window).width() <= 768) {
+		 			$("#containerM").hide();
+		 			
+		 		}
+
+
+
+		 		// $("#containerM").hide(() =>{
+
+		 		// });
 		 		$("#searchNotFound").css("display","block");
+
 		 	}	
 		 },
 		 error: (request,type,sd) => {
@@ -279,20 +293,24 @@ let getMovieDetails = () =>{
 		 		alert("Check your internet connectivity");
 		 	}else{
 
-		 	alert(err.responseJSON.error.message)
-		 }
+		 		alert(err.responseJSON.error.message)
+		 	}
 		 },
         beforeSend: () => { // while request is processing.
         	$("#container1").css("display","none");
         	$("#container2").css("display","none");
+        	if ($(window).width() <= 768) {
+        		$("#containerM").hide();
+        		
+        	}
         	$("#searchNotFound").css("display","none");
         	$(".loader").css("display","block");
         },
         complete: () => {
-			$(".loader").css("display","none");
+        	$(".loader").css("display","none");
 
-		},
-		timeout:9000
-	})
+        },
+        timeout:9000
+    })
 
 }
