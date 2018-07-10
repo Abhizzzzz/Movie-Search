@@ -1,3 +1,110 @@
 :root{
 	font-size: 16px;
 }
+hr{
+	display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    padding: 0;	
+}
+.colorWhite{
+	color: white;
+}
+.loader {
+	display: none;
+  border: 1rem solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 1rem solid #3498db;
+  width: 16rem;
+  height: 16rem;
+  margin-top: 2rem;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+#container1{
+	display: none;
+	background-color: tomato;
+	/*height: 45vh;*/
+}
+#container2{
+	display: none;
+	background-color: black;
+	/*height: 45vh;*/
+}
+#containerM{
+	display: none;
+	background-color: black;
+}
+#searchNotFound{
+	display: none;
+	margin-right: 5rem;
+}
+.marginLeft{
+	margin-left: 3rem;
+}
+.icon-group {
+	display: none;
+    margin-top: 2vh;
+}
+
+.icon-group .icon {
+    margin-right: 0.5rem;
+    width: 3vw;
+}
+.fontSize{
+	font-size: 1.5rem;
+}
+
+
+@media only screen and (max-width: 768px){
+	/*#container1{
+		height: 65vh;
+	}*/
+	.posterClass{
+		display: none;
+	}
+	#containerM{
+		display: block;
+	}
+	h5{
+		font-size: 1rem;
+	}
+	h4{
+		font-size: 1.2rem;
+	}
+	h3{
+		font-size: 1.4rem;
+	}
+	.marginLeft{
+		margin-left: 0rem;
+	}
+	.fontSize{
+		font-size: 1rem;
+	}
+	p{
+		font-size: 0.8rem;
+	}
+}
+@media only screen and (max-width: 400px){
+	/*p{
+		font-size: 0.6rem;
+	}*/
+	h5{
+		font-size: 0.8rem;
+	}
+}
+@media only screen and (max-width: 362px){
+	
+}
